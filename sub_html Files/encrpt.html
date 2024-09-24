@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Sender</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .message-window {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      .message-display {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        min-height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="message-window bg-light">
+        <h4 class="text-center">Message Sender</h4>
+
+        <div class="form-group">
+          <label for="messageInput">Enter your message:</label>
+          <textarea class="form-control" id="messageInput" rows="3"></textarea>
+        </div>
+
+        <button
+          id="sendBtn"
+          class="btn btn-primary btn-block"
+          onclick="sendMessage()"
+        >
+          Show Message
+        </button>
+        <div class="mt-2">
+          <h6><p>Your Message</p></h6>
+          <div id="arriveDisplay" class="message-display mt-3"></div>
+        </div>
+
+        <button
+          id="seeEncryptedBtn"
+          class="btn btn-secondary btn-block mt-2 mb-3"
+          onclick="encrpt()"
+        >
+          Send & Encrypted Message
+        </button>
+        <div id="messageDisplay" class="message-display mt-3">
+          <p id="messageDisplay"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="/Sub_Js files/encrpt.js"></script>
+    <script src="/encript_decrpt.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

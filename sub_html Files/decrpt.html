@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Sender & Receiver</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .message-window {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: #f8f9fa;
+      }
+      .message-display {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        min-height: 50px;
+      }
+      #clearStorage {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Message Receiver Window -->
+      <div class="message-window bg-light mt-5">
+        <h4 class="text-center mb-4">Message Receiver</h4>
+        <div>
+          <h6><p>Arrived Messages</p></h6>
+          <div id="receivedMessageDisplay" class="message-display mb-4"><p id="receivedMessageDisplay"></p>
+        </div>
+        <button
+          id="decryptBtn"
+          class="btn btn-success btn-block mt-2 mb-4"
+          onclick="decrpt()"
+        >
+          Decrypt Message
+        </button>
+        <div>
+          <h6><p>Decrpted Message</p></h6>
+          <div id="decrptedMsgdisplay" class="message-display"></div>
+        </div>
+        <button
+          id="clearStorage"
+          class="btn btn-block text-white mt-4 mb-4"
+          onclick="cleared()"
+        >
+          Clear Storage
+        </button>
+      </div>
+    </div>
+
+    <script src="/Sub_Js files/decrpt.js"></script>
+    <script src="/encript_decrpt.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

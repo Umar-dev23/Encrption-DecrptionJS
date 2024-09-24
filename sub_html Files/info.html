@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XOR Encryption & Decryption Help</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        color: #343a40;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+      }
+
+      .container {
+        margin-top: 50px;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #007bff;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+        color: #495057;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+
+      .code-box {
+        background-color: #e9ecef;
+        padding: 15px;
+        border-radius: 5px;
+        border-left: 4px solid #007bff;
+        margin-bottom: 20px;
+        font-family: 'Courier New', Courier, monospace;
+      }
+
+      .highlight {
+        background-color: #d1ecf1;
+        padding: 2px 4px;
+        border-radius: 4px;
+        color: #0c5460;
+      }
+
+      .key {
+        color: #28a745;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>How XOR Encryption & Decryption Works</h1>
+      <h2>Step 1: Converting Text to Binary</h2>
+      <p>
+        When you type a message in our software, the first step is to convert
+        that text into binary code. Each character in your message is
+        represented by a unique binary code, which is a sequence of 0s and 1s.
+      </p>
+      <p>
+        For example, the letter "H" is represented as <span class="code-box">01001000</span> in binary.
+      </p>
+
+      <h2>Step 2: Applying XOR Operation</h2>
+      <p>
+        The XOR operation is a mathematical operation that compares each bit of
+        the binary code of your message with the corresponding bit of the
+        binary code of a key. In this case, our key is "<span class="key">Aly</span>".
+      </p>
+      <p>
+        The XOR operation follows a simple rule:
+        <ul>
+          <li><strong>0 XOR 0 = 0</strong></li>
+          <li><strong>0 XOR 1 = 1</strong></li>
+          <li><strong>1 XOR 0 = 1</strong></li>
+          <li><strong>1 XOR 1 = 0</strong></li>
+        </ul>
+      </p>
+      <p>
+        Our software takes the binary code of your message and applies the XOR
+        operation using the binary code of the key "<span class="key">Aly</span>". The key is repeated if it's shorter than the message.
+      </p>
+
+      <h2>Step 3: Encryption Example</h2>
+      <p>Let’s say you want to encrypt the message "Hello".</p>
+      <p>
+        The binary code for "Hello" is:
+        <div class="code-box">
+          H: 01001000<br />
+          e: 01100101<br />
+          l: 01101100<br />
+          l: 01101100<br />
+          o: 01101111
+        </div>
+        The binary code for the key "Aly" is:
+        <div class="code-box">
+          A: 01000001<br />
+          l: 01101100<br />
+          y: 01111001
+        </div>
+        Our software repeats the key to match the length of the message:
+        <div class="code-box">
+          A: 01000001<br />
+          l: 01101100<br />
+          y: 01111001<br />
+          A: 01000001<br />
+          l: 01101100
+        </div>
+        Applying XOR to each bit, the encrypted message will look like this:
+        <div class="code-box">
+          00001001<br />
+          00001001<br />
+          00010101<br />
+          00101101<br />
+          00000011
+        </div>
+      </p>
+
+      <h2>Step 4: Decryption</h2>
+      <p>
+        To decrypt the message, the receiver uses the same XOR operation with
+        the same key "<span class="key">Aly</span>". The XOR operation will reverse the encryption,
+        returning the binary code to its original form. This binary code is
+        then converted back to text, revealing the original message.
+      </p>
+
+      <p>
+        In this way, our software ensures that your messages are securely
+        encrypted and can only be decrypted by someone who knows the key.
+      </p>
+    </div>
+  </body>
+</html>
